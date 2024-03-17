@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping Mall</title>
+	
+	<!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+	<!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/bootstrap.min.js"></script>
+	
+	<!-- Poly -->
+    <link href="css/poly.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <header class="row">
+        	<div class="shopping-mall">
+	            <h1>Online shopping mall</h1>
+	            <h5>The center point of the professional programming</h5>
+            </div>
+            <img class="pull-right" src="images/header-object.png" />
+        </header>
+        <nav class="row">
+            <div class="navbar navbar-inverse">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <!--Menu-->
+                    <ul class="nav navbar-nav">
+                        <li><a href=""><span class="glyphicon glyphicon-home"></span> Trang chủ</a></li>
+                        <li><a href=""><span class="glyphicon glyphicon-th-list"></span> Giới thiệu</a></li>
+                        <li><a href=""><span class="glyphicon glyphicon-earphone"></span> Liên hệ</a></li>
+                        <li><a href=""><span class="glyphicon glyphicon-envelope"></span> Góp ý</a></li>
+                        <li><a href=""><span class="glyphicon glyphicon-question-sign"></span> Hỏi đáp</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> Tài khoản <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="">Đăng nhập</a></li>
+                                <li><a href="">Quên mật khẩu</a></li>
+                                <li><a href="">Đăng ký thành viên</a></li>
+                                <li class="divider"></li>
+                                <li><a href="">Đăng xuất</a></li>
+                                <li><a href="">Đổi mật khẩu</a></li>
+                                <li><a href="">Cập nhật hồ sơ</a></li>
+                                <li class="divider"></li>
+                                <li><a href="">Đơn hàng</a></li>
+                                <li><a href="">Hàng đã mua</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="">English</a></li>
+                        <li><a href="">Tiếng Việt</a></li>
+                    </ul>
+                    <!--Menu-->
+                </div>
+            </div>
+        </nav>
+        <div class="poly-sheet row">
+
+            <article class="col-sm-9">
+                <!--Nội dung trang web-->
+                <div class="jumbotron">
+                    <h1 class="display-3">Front_End Framework</h1>
+                    <p class="lead">Jumbo helper text</p>
+                    <hr class="my-2">
+                    <p>Bootstrap là framework HTML, CSS, và JavaScript cho phép người dùng thiết kế website chuẩn responsive có khả năng tương thích trên mọi nền tảng trình duyệt và thiết bị di động</p>
+                    <p class="lead">
+                        <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">More</a>
+                    </p>
+                </div>
+                <!-- carousel-->
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+            
+                    <!-- Slides -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="images/header-object.png" alt="Slide 1">
+                            <div class="carousel-caption">
+                                <h3>Slide 1</h3>
+                                <p>Description for Slide 1</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/header-object.png" alt="Slide 2">
+                            <div class="carousel-caption">
+                                <h3>Slide 2</h3>
+                                <p>Description for Slide 2</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/header-object.png" alt="Slide 3">
+                            <div class="carousel-caption">
+                                <h3>Slide 3</h3>
+                                <p>Description for Slide 3</p>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="thumbnail">
+                                <img src="images/products/1010.jpg" alt="Product">
+                                <div class="caption">
+                                    <h4>Product Name</h4>
+                                    <p>Product description</p>
+                                    <p>
+                                        <a href="detail.html" class="btn btn-primary" role="button">Infor</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="thumbnail">
+                                <img src="images/products/1009.jpg" alt="Product">
+                                <div class="caption">
+                                    <h4>Product Name</h4>
+                                    <p>Product description</p>
+                                    <p>
+                                        <a href="detail.html" class="btn btn-primary" role="button">Infor</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="thumbnail">
+                                <img src="images/products/1011.jpg" alt="Product">
+                                <div class="caption">
+                                    <h4>Product Name</h4>
+                                    <p>Product description</p>
+                                    <p>
+                                        <a href="detail.html" class="btn btn-primary" role="button">Infor</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add more col-sm-4 divs for additional products -->
+                    </div>
+                </div>
+                <div id="pagination" style="text-align: center;">
+                    <!-- <a class="page-btn glyphicon glyphicon-hand-up" style="margin-left:50px;" data-page="1">       </a> -->
+                    <a class="page-btn glyphicon glyphicon-hand-left" href="Layout.html">     </a>
+                    <a class="page-btn glyphicon glyphicon-hand-right" href="Layout.html">    </a>
+                    <!-- <a class="page-btn glyphicon glyphicon-hand-down" data-page="2">     </a> -->
+                   
+                   
+                    <!-- Thêm các nút phân trang khác -->
+                </div>
+                
+            </article>
+            
+            <aside class="col-sm-3">
+                <!--CartInfo-->
+                <div class="poly-cart">
+	                <div class="panel panel-default">
+	                    <div class="panel-body">
+	                        <img class="col-sm-5" src="images/shoppingcart.gif" />
+	                        <ul class="col-sm-7">
+	                            <li>100 items</li>
+	                            <li>$ 56.8</li>
+	                            <li><a href="">View Cart</a></li>
+	                        </ul>
+	                    </div>
+	                </div>
+                </div>
+                <!--/CartInfo-->
+
+                <!--Search-->
+                <div class="nn-cart">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <form method="post" action="/Product/Search">
+                                <input placeholder="Keywords" name="Keywords" class="form-control" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--/Search-->
+
+                
+                    <div class="panel-group" id="accordion">
+                
+                        <!-- Chủng loại -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseCategory">
+                                        <span class="glyphicon glyphicon-th-list"></span>
+                                        Chủng loại
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseCategory" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <div class="list-group">
+                                        <a href="#" class="list-group-item">Điện thoại di động<span class="badge bg-warning text-dark">3</span></a>
+                                        <a href="#" class="list-group-item">Máy tính xách tay<span class="badge bg-warning text-dark">13</span></a>
+                                        <a href="#" class="list-group-item">Máy tính để bàn<span class="badge bg-warning text-dark">15</span></a>
+                                        <a href="#" class="list-group-item">Quạt máy<span class="badge bg-warning text-dark">8</span></a>
+                                        <a href="#" class="list-group-item">Tivi<span class="badge bg-warning text-dark">7</span></a>
+                                        <a href="#" class="list-group-item">Tủ lạnh<span class="badge bg-warning text-dark">10</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Nhà cung cấp -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseSupplier">
+                                        <span class="glyphicon glyphicon-list-alt"></span>
+                                        Nhà cung cấp
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseSupplier" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="list-group">
+                                        <a href="#" class="list-group-item">Apple</a>
+                                        <a href="#" class="list-group-item">Samsung</a>
+                                        <a href="#" class="list-group-item">Nokia</a>
+                                        <a href="#" class="list-group-item">GL</a>
+                                        <a href="#" class="list-group-item">Sony Ericson</a>
+                                        <a href="#" class="list-group-item">Dell</a>
+                                        <a href="#" class="list-group-item">Acer</a>
+                                        <a href="#" class="list-group-item">HP</a>
+                                        <a href="#" class="list-group-item">Toshiba</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Hàng đặc biệt -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseSpecial">
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                        Hàng đặc biệt
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseSpecial" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="list-group">
+                                        <a href="#" class="list-group-item">Hàng bán chạy</a>
+                                        <a href="#" class="list-group-item">Hàng mới</a>
+                                        <a href="#" class="list-group-item">Hàng giảm giá</a>
+                                        <a href="#" class="list-group-item">Hàng đặc biệt</a>
+                                        <a href="#" class="list-group-item">Hàng xem nhiều</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+            </aside>
+        </div>
+
+        <footer class="panel panel-default row">
+            <div class="panel-heading text-center">
+                <p>FPT Polytechnic &copy; 2017. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
