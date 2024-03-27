@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <title>Product List</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style>
+    .container {
+      margin-top: 20px;
+    }
+
+    .product-image {
+      width: 100%;
+      max-height: 200px;
+    }
+
+    .product-name {
+      background-color: aqua;
+      padding: 5px;
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+  <script>
+    angular.module('myApp', [])
+      .controller('ProductController', function($scope) {
+        $scope.products = [
+          {
+            name: "Đồng hồ thụy sỹ",
+            image: "/lab3/images/products/1001.jpg",
+            price: 1200
+          },
+          {
+            name: "Dell Star X",
+            image: "/lab3/images/products/1003.jpg",
+            price: 700
+          },
+          {
+            name: "Sony Vaio 2017",
+            image: "/lab3/images/products/1004.jpg",
+            price: 1700
+          },
+          {
+            name: "Máy ảnh Canon",
+            image: "/lab3/images/products/1005.jpg",
+            price: 300
+          },
+          {
+            name: "Vòng cưới France",
+            image: "/lab3/images/products/1009.jpg",
+            price: 7000
+          },
+          {
+            name: "Motorola thế hệ 5",
+            image: "/lab3/images/products/1011.jpg",
+            price: 900
+          },
+          {
+            name: "Mũ cao bồi Mexico",
+            image: "/lab3/images/products/1014.jpg",
+            price: 100
+          },
+          {
+            name: "Nước hoa Korea",
+            image: "/lab3/images/products/1023.jpg",
+            price: 600
+          }
+        ];
+      });
+  </script>
+</head>
+<body>
+  <div ng-controller="ProductController">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4" ng-repeat="product in products">
+          <div class="panel panel-default">
+            <div class="panel-heading product-name">{{ product.name }}</div>
+            <div class="panel-body">
+              <img src="{{ product.image }}" alt="{{ product.name }}" class="product-image">
+              <p>Price: {{ product.price }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en" ng-app="myapp">
+<head>
+    <title>Quản lý sinh viên</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/css/bootstrap.min.css">
+    <style>
+        table {
+            width: 100%;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body ng-controller="myctrl">
+    <h1>Quản lý sinh viên</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Họ và tên</th>
+                <th>Ngày sinh</th>
+                <th>Điểm</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="student in students">
+                <td>{{ student.fullName }}</td>
+                <td>{{ student.dob }}</td>
+                <td>{{ student.mark }}</td>
+                <td ng-if="student.mark < 5">Yếu/Kém</td>
+                <td ng-if="student.mark >= 5 && student.mark <= 8">Trung bình/Khá</td>
+                <td ng-if="student.mark > 8">Giỏi/Xuất sắc</td>
+                <td>
+                    <button type="button" class="btn btn-primary" ng-click="save()" ng-show="currentIndex === -1">Lưu</button>
+                    <button type="button" class="btn btn-info" ng-click="edit($index)" ng-show="currentIndex !== -1">Sửa</button>
+                    <button type="button" class="btn btn-warning" ng-click="delete($index)" ng-show="currentIndex !== -1">Xóa</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Thông tin sinh viên</h2>
+
+    <form>
+        <div class="form-group">
+            <label>Họ và tên:</label>
+            <input type="text" class="form-control" ng-model="student.fullName">
+        </div>
+
+        <div class="form-group">
+            <label>Ngày sinh:</label>
+            <input type="text" class="form-control" ng-model="student.dob">
+        </div>
+
+        <div class="form-group">
+            <label>Điểm:</label>
+            <input type="text" class="form-control" ng-model="student.mark">
+        </div>
+
+        <button type="button" class="btn btn-primary" ng-click="save()">Lưu</button>
+        <button type="button" class="btn btn-secondary" ng-click="clear()">Mới</button>
+        <button type="button" class="btn btn-secondary" ng-click="cancel()">Hủy</button>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+    <script>
+        var app = angular.module("myapp", []);
+    
+        app.controller("myctrl", function($scope) {
+            $scope.students = [
+                {
+                    fullName: "Nguyễn Văn A",
+                    dob: "01/01/1990",
+                    mark: 8
+                },
+                {
+                    fullName: "Nguyễn Văn B",
+                    dob: "01/01/1995",
+                    mark: 9
+                }
+            ];
+    
+            $scope.student = {};
+    
+            $scope.edit = function(index) {
+                $scope.student = angular.copy($scope.students[index]);
+                $scope.currentIndex = index;
+            };
+    
+            $scope.save = function() {
+                if ($scope.currentIndex !== undefined) {
+                    $scope.students[$scope.currentIndex] = angular.copy($scope.student);
+                } else {
+                    $scope.students.push(angular.copy($scope.student));
+                }
+                $scope.clear();
+            };
+    
+            $scope.delete = function(index) {
+                $scope.students.splice(index, 1);
+                $scope.clear();
+            };
+    
+            $scope.clear = function() {
+                $scope.student = {};
+                $scope.currentIndex = undefined;
+            };
+    
+            $scope.cancel = function() {
+                if ($scope.currentIndex !== undefined) {
+                    $scope.student = angular.copy($scope.students[$scope.currentIndex]);
+                } else {
+                    $scope.clear();
+                }
+            };
+        });
+    </script>
+</body>
+</html>
