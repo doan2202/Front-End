@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <title>Form Validation Example</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style>
+    .error-message {
+      background-image: url('../images/anifire.gif');
+      background-position: center right;
+      background-repeat: no-repeat;
+    }
+
+    .success-message {
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div ng-controller="myCtrl">
+    <form name="form" novalidate>
+      <div class="form-group" ng-class="{'has-error': form.fullname.$invalid}">
+        <label for="fullname">Họ và tên:</label>
+        <input type="text" id="fullname" name="fullname" ng-model="user.fullname" required maxlength="25" class="form-control">
+        <div ng-show="form.fullname.$invalid" class="error-message">Họ và tên không hợp lệ</div>
+      </div>
+
+      <div class="form-group" ng-class="{'has-error': form.score.$invalid}">
+        <label for="score">Điểm:</label>
+        <input type="number" id="score" name="score" ng-model="user.score" required min="0" max="10" class="form-control">
+        <div ng-show="form.score.$invalid" class="error-message">Điểm không hợp lệ</div>
+      </div>
+
+      <div class="form-group" ng-class="{'has-error': form.email.$invalid}">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" ng-model="user.email" required class="form-control">
+        <div ng-show="form.email.$invalid" class="error-message">Email không hợp lệ</div>
+      </div>
+
+      <div class="form-group" ng-class="{'has-error': form.licensePlate.$invalid}">
+        <label for="licensePlate">Số xe:</label>
+        <input type="text" id="licensePlate" name="licensePlate" ng-model="user.licensePlate" required ng-pattern="5\d-[A-Z]\d-((\d{4})|(\d{3}\.\d{2}))" class="form-control">
+        <div ng-show="form.licensePlate.$invalid" class="error-message">Số xe không hợp lệ</div>
+      </div>
+
+      <div ng-show="loggedIn" class="success-message">Đăng nhập thành công</div>
+
+      <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid" ng-click="login()">Submit</button>
+    </form>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+      $scope.user = {};
+      $scope.loggedIn = false;
+
+      $scope.login = function() {
+        // Kiểm tra logic đăng nhập ở đây (ví dụ: kiểm tra tên người dùng và mật khẩu)
+
+        // Nếu đăng nhập thành công, đặt biến loggedIn thành true
+        $scope.loggedIn = true;
+      };
+    });
+  </script>
+</body>
+</html>
